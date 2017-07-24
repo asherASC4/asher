@@ -1,0 +1,16 @@
+body{
+    background-color: black;
+    background-image: url("http://media.myfoxmemphiscom.cmgdigital.com/photo/2016/06/19/GettyImages-541547452_1466393984491_4924779_ver1.0_1280_720.jpg");
+
+
+
+}
+h1 {
+    text-align: top right;
+    color:greenyellow
+}
+p{
+    text-align: right;
+    color:blue
+
+}
