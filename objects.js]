@@ -1,0 +1,6 @@
+var Charizard = {
+    "attack" : "Blaze",
+     "HP" ; 266 ,
+      "legendary" :false, 
+      "types" :["Fire", "Flying"]
+      };

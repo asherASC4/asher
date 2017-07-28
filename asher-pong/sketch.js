@@ -9,9 +9,6 @@ function setup() {
 }
 
 function draw() {
-
-
-
    background (25);
     //distance from center of the screen
     var d = dist(windowWidth/2, windowHeight/2, mouseX, mouseY);
@@ -38,11 +35,7 @@ fill("white");
  rect(1950, yrect, 30, 350);
 
 var yrect= 20
-
-
-
-
-      }
+ }
 
 
 function draw() {

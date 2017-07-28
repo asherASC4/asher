@@ -1,6 +1,8 @@
 function setup() {
   createCanvas(1500, 1000);
   background("blue");
+  
+
   function pokemon(name, move1, move2, hp, attack)
 {
     this.name = name;
@@ -19,10 +21,12 @@ function setup() {
     "hp": 150, "attack": 95};
     var chHp = charizard.hp;
     
-    
-
 }
+var pokeTrainer =prompt("Hello Trainer! What is your name?");
+var trainer = pokeTrainer;
  function draw(){
+     
+
      fill("white");
      rect(20, 20, 200, 55);
 
@@ -43,18 +47,18 @@ function setup() {
                             fill("black");
                             rect(600,300,200,55)
 
-    fill("green");
+    fill("yellow");
     ellipse(150, 400, 100, 100);
 
-    fill("yellow");
+    fill("red");
     ellipse(650, 200, 100, 100);
 
 
-fill("black");
+fill("green");
     rect(700,630,200,55)
 
     textSize(32);
-      fill("aqua");
+      fill("white");
      text("ATTACK!", 720, 670);
      
      fill("white");
@@ -71,7 +75,6 @@ fill("black");
       fill("white");
      text("HP2:#", 625, 350);
      
-     
 
      
     textSize(40);
@@ -81,7 +84,8 @@ fill("black");
     textSize(40);
     fill("red");
     text(pikHp,140, 545);
-    
+    textSize(32);
+     text(trainer, 25, 60);
     
 }       
     function pokemon(name, move1, move2, hp, attack)
@@ -98,7 +102,7 @@ fill("black");
     "hp" : 266, "attack": 84};
     var pikachu = {"name": "Pikachu",
     "move1": "Iron Tail","move2":"Thunder Bolt",
-    "hp": 255, "attack": 95};
+    "hp": 230, "attack": 95};
     var chHp = charizard.hp;
     var pikHp = pikachu.hp;
     var pikAttack = pikachu.attack;
@@ -107,21 +111,18 @@ function mouseClicked()
 {
     if (mouseX > 700 && mouseX < 900 && mouseY > 630 && mouseY < 685)
     {
-        console.log("Charizard's was decreased by 95!");
+        console.log("Your pokemon Pikacu attacked Charizard and Charizard's Hp was decreased by 95!");
         chHp = chHp - pikAttack;
-
         
-         console.log("Pikachu's was decreased by 84")
+        console.log("Pikachu's was decreased by 84");
         pikHp = pikHp - chAttack;
-    
-
         
         
     }
     
     return false;
  }
-
+  
 
 
 

@@ -14,11 +14,11 @@ function draw(){
     x += xspeed
     y += yspeed
 
-    while(x>=250){
+    if(x>=250){
         x-=100
     }   
 
-    while(y<=50){
+    if(y<=50){
         x+=10
     }
 }
