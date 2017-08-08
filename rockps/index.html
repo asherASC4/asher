@@ -1,12 +1,58 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
 <body>
+   <style>
+
+      body{
+           background-color: white
+       }
+       h1{
+           color: blue;
+           text-align: center;
+       }
+       p{
+           font-family: Impact;
+           font-size: 20px;
+       }
+  
+   </style>
 
 <h1>Rock Paper Scissors</h1>
 <script src ="sketch.js"></script>
-<p id="demo">Play a game of Rock Paper Scissors against the computer.</p>
 
-<button type="button" onclick="myFunction()">Start game</button>
+<div class="game">
+  <strong>choose:</strong>
+  <br />
+  <button onclick="userChose('rock')">&#x26f0;</button>
+  <button onclick="userChose('paper')">&#x1f4ce;</button>
+  <button onclick="userChose('scissor')">&#x2704;</button>
+  <div class="result" id="result">&nbsp;</div>
+  <style>
+      h1{
+          color: white;
+          text-align: center;
+      }
+      p{
+          font-family: impact;
+          font-size: 30px;
+        
+     }
+  </style>
+</div>
 
+<div class="notes" id="notes">score:&nbsp;<span id="score">0/0</span> &bull;
+  <button type="button" class="btn btn-primary btn-lg">Reset</button>
+</div>
+
+
+
+<button type="button" class="btn btn-primary btn-lg">Start</button>
+
+<div>
+    <p>Your Initials:</p><input id="name" type="text"></div>
+    <button type="button" onclick="myFunction()">Start Game</button>
 </body>
 </html>
