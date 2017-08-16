@@ -10,6 +10,24 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+
+
+			<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+			<script>
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyCyNirktii31vstKxBUQ-Y9SxcHh0MJWwI",
+				authDomain: "yardiapp-176814.firebaseapp.com",
+				databaseURL: "https://yardiapp-176814.firebaseio.com",
+				projectId: "yardiapp-176814",
+				storageBucket: "yardiapp-176814.appspot.com",
+				messagingSenderId: "128648529595"
+			};
+			firebase.initializeApp(config);
+			</script>
+
+	<script src = "assets/js/database.js"></script>
+</script>
 	</head>
 	<body>
 		<div class="page-wrap">
@@ -39,7 +57,7 @@
 
 									<!-- Filters -->
 										<header>
-											<h1>Gallery</h1>
+											<h1>Host a Party </h1>
 											<ul class="tabs">
 												<li><a href="#" data-tag="all" class="button active">All</a></li>
 												<li><a href="#" data-tag="people" class="button">People</a></li>
@@ -49,41 +67,17 @@
 										</header>
 
 										<div class="content">
-											<div class="media all people">
-												<a href="images/fulls/01.jpg"><img src="images/thumbs/01.jpg" alt="" title="This right here is a caption." /></a>
-											</div>
-											<div class="media all place">
-												<a href="images/fulls/05.jpg"><img src="images/thumbs/05.jpg" alt="" title="This right here is a caption." /></a>
-											</div>
-											<div class="media all thing">
-												<a href="images/fulls/09.jpg"><img src="images/thumbs/09.jpg" alt="" title="This right here is a caption." /></a>
-											</div>
-											<div class="media all people">
-												<a href="images/fulls/02.jpg"><img src="images/thumbs/02.jpg" alt="" title="This right here is a caption." /></a>
-											</div>
-											<div class="media all place">
-												<a href="images/fulls/06.jpg"><img src="images/thumbs/06.jpg" alt="" title="This right here is a caption." /></a>
-											</div>
-											<div class="media all thing">
-												<a href="images/fulls/10.jpg"><img src="images/thumbs/10.jpg" alt="" title="This right here is a caption." /></a>
-											</div>
-											<div class="media all people">
-												<a href="images/fulls/03.jpg"><img src="images/thumbs/03.jpg" alt="" title="This right here is a caption." /></a>
-											</div>
-											<div class="media all place">
-												<a href="images/fulls/07.jpg"><img src="images/thumbs/07.jpg" alt="" title="This right here is a caption." /></a>
-											</div>
-											<div class="media all thing">
-												<a href="images/fulls/11.jpg"><img src="images/thumbs/11.jpg" alt="" title="This right here is a caption." /></a>
-											</div>
-											<div class="media all people">
-												<a href="images/fulls/04.jpg"><img src="images/thumbs/04.jpg" alt="" title="This right here is a caption." /></a>
-											</div>
-											<div class="media all place">
-												<a href="images/fulls/08.jpg"><img src="images/thumbs/08.jpg" alt="" title="This right here is a caption." /></a>
-											</div>
-											<div class="media all thing">
-												<a href="images/fulls/12.jpg"><img src="images/thumbs/12.jpg" alt="" title="This right here is a caption." /></a>
+											<p></p>
+											<p></p>
+											<div class="input-group">
+												
+												<input id= "partyname"type="text" class="form-control" placeholder="Party Name" aria-describedby="basic-addon1">
+												<input id = "address"type="text" class="form-control" placeholder="Address" aria-describedby="basic-addon1">
+												<input id = "agegroup"type="text" class="form-control" placeholder="Age Group" aria-describedby="basic-addon1">
+												<input type="reset" onclick="updateDB();" value="Submit">
+												
+
+												
 											</div>
 										</div>
 								</div>
@@ -125,6 +119,7 @@
 										</ul>
 									</form>
 								</div>
+								
 
 						</section>
 

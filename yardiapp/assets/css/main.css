@@ -500,6 +500,7 @@
 
 			#contact .column.social {
 				background: #e6e6e6;
+				width: 100%;
 			}
 
 			@media screen and (max-width: 980px) {
@@ -1627,4 +1628,12 @@
 				padding: 3em 0 1em 0;
 			}
 
+		}
+
+		.columnSM{
+			width: 100%;
+		}
+
+		.columnForm{
+			width: 0%;
 		}

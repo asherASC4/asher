@@ -12,8 +12,25 @@
 		<meta name="google-signin-client_id" content="128648529595-56tgv4crjinms8j3ctp3a7mq6mfmrvbp.apps.googleusercontent.com">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
-		<script src="lib/js/main.js"></script>
+		<script src="main.js"></script>
+        <script src="yardi.js"></script>
+        <script src="Amir.js"></script>
 		<link rel="stylesheet" href="assets/css/main.css" />
+
+		
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCyNirktii31vstKxBUQ-Y9SxcHh0MJWwI",
+    authDomain: "yardiapp-176814.firebaseapp.com",
+    databaseURL: "https://yardiapp-176814.firebaseio.com",
+    projectId: "yardiapp-176814",
+    storageBucket: "",
+    messagingSenderId: "128648529595"
+  };
+  firebase.initializeApp(config);
+</script>
 
 
 
@@ -71,17 +88,18 @@
 						</section>
 												
   <div id="map"></div>
+  <button id="AmiristheTruth" onclick="addparty();">Find Location</button>
 
     <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
-      var map, infoWindow;
+      var map, infoWindow, andy;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
-          zoom: 6
+          zoom: 12
         });
         infoWindow = new google.maps.InfoWindow;
 
@@ -94,7 +112,7 @@
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
+            infoWindow.setContent('Your Location');
             infoWindow.open(map);
             map.setCenter(pos);
           }, function() {
@@ -106,13 +124,62 @@
         }
       }
 
+      function addparty(){
+          var marker = new google.maps.Marker({
+          position: {
+              lat: 40.7412,
+              lng:-73.9896
+          },
+          map: map
+        });
+
+        andy = new google.maps.Marker({
+          position: {
+              lat: 40.7850,
+              lng:-73.9682
+          },
+          map: map
+        });
+
+        
+        var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">768970 </h1>'+
+            '<div id="bodyContent">'+
+            '<p><b>Amir</b>, also referred to as <b>The smartest Nigga you know</b>, is a monster ' +
+            '</p>'+
+            '<p>Attribution: Amir, <a href="https://amasc4.github.io/">'+
+            'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+            '(last visited June 22, 2009).</p>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        andy.addListener('click', function() {
+          infowindow.open(map, andy);
+        });
+      }
+
+      var database = firebase.database().ref();
+
+        database.push(andy);
+            
+
+
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
+
         infoWindow.open(map);
       }
+      
+
     </script>
     
        <script async defer
@@ -121,59 +188,73 @@
 					<!-- Gallery -->
 						<section id="galleries">
 
-
-							<!-- Photo Galleries -->
-								<div class="gallery">
-									<header class="special">
-										
-										<h2></h2>
-									</header>
-									<div class="content">
-										
-									</div>
-									<footer>
-										 
-										
-   										</div>
-									</footer>
-								</div>
-						</section>
+                            <!-- Photo Galleries -->
+                                <div class="gallery">
+                                    <header class="special">
+                                        <h2>Featured</h2>
+                                    </header>
+                                    <div class="content">
+                                        <div class="media">
+                                            <a href=><img src="arkady-lifshits-135921.jpg" alt="arkady-lifshits-135921.jpg" title="This right here is a caption." /></a>
+                                        </div>
+                                        <div class="media">
+                                            <a href="blake-lisk-228692.jpg"><img src="blake-lisk-228692.jpg" alt="" title="This right here is a caption." /></a>
+                                        </div>
+                                        <div class="media">
+                                            <a href="eric-ward-250010.jpg"><img src="eric-ward-250010.jpg" alt="" title="This right here is a caption." /></a>
+                                        </div>
+                                        <div class="media">
+                                            <a href="matty-adame-274356.jpg"><img src="matty-adame-274356.jpg" alt="" title="This right here is a caption." /></a>
+                                        </div>
+                                        <div class="media">
+                                            <a href="matty-adame-326236.jpg"><img src="matty-adame-326236.jpg" alt="" title="This right here is a caption." /></a>
+                                        </div>
+                                        <div class="media">
+                                            <a href="melissa-askew-14696.jpg"><img src="melissa-askew-14696.jpg" alt="" title="This right here is a caption." /></a>
+                                        </div>
+                                        <div class="media">
+                                            <a href="vinicius-amano-137272.jpg"><img src="vinicius-amano-137272.jpg" alt="" title="This right here is a caption." /></a>
+                                        </div>
+                                        <div class="media">
+                                            <a href="maxime-bhm-110039.jpg"><img src="maxime-bhm-110039.jpg" alt="" title="This right here is a caption." /></a>
+                                        </div>
+                                    </div>
+                                    <footer>
+                                        <a href="gallery.html" class="button big">Full Gallery</a>
+                                    </footer>
+                                </div>
+                        </section>
 
 					<!-- Contact -->
 						<section id="contact">
 							<!-- Social -->
-								<div class="social column">
-									<h3>About Me</h3>
-									<p>Mus sed interdum nunc dictum rutrum scelerisque erat a parturient condimentum potenti dapibus vestibulum condimentum per tristique porta. Torquent a ut consectetur a vel ullamcorper a commodo a mattis ipsum class quam sed eros vestibulum quisque a eu nulla scelerisque a elementum vestibulum.</p>
-									<p>Aliquet dolor ultricies sem rhoncus dolor ullamcorper pharetra dis condimentum ullamcorper rutrum vehicula id nisi vel aptent orci litora hendrerit penatibus erat ad sit. In a semper velit eleifend a viverra adipiscing a phasellus urna praesent parturient integer ultrices montes parturient suscipit posuere quis aenean. Parturient euismod ultricies commodo arcu elementum suspendisse id dictumst at ut vestibulum conubia quisque a himenaeos dictum proin dis purus integer mollis parturient eros scelerisque dis libero parturient magnis.</p>
+								<div class="social column columnSM">
+								<center>	<h3>Social Media</h3>
+									<p></p>
+									<p></p>
 									<h3>Follow Us</h3>
 									<ul class="icons">
 										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 										<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 										<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
-									</ul>
+									</ul></center>
 								</div>
 
 							<!-- Form -->
-								<div class="column">
-									<h3>Get in Touch</h3>
+								<div class="column columnForm">
+									<h3></h3>
 									<form action="#" method="post">
 										<div class="field half first">
-											<label for="name">Name</label>
-											<input name="name" id="name" type="text" placeholder="Name">
+											
 										</div>
 										<div class="field half">
-											<label for="email">Email</label>
-											<input name="email" id="email" type="email" placeholder="Email">
+											
 										</div>
 										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+											
 										</div>
-										<ul class="actions">
-											<li><input value="Send Message" class="button" type="submit"></li>
-										</ul>
+										
 									</form>
 								</div>
 
@@ -196,6 +277,8 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/yardi.js"></script>
+
  <!--<div class="signs">
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
         <a href="#" class="signOut" onclick="onSignOut();">Sign out</a>
